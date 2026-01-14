@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بادشاہ ہلدی - Badshah Haldi | Nature's Golden Treasure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .crown-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: #1A5C32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .crown-icon::before {
+            content: '👑';
+            font-size: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 4.5rem;
+            color: #1A5C32;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            direction: rtl;
+        }
+
+        .hero .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A5C32;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero .tagline {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.8rem;
+            color: #2C4A1F;
+            margin-bottom: 2rem;
+            direction: rtl;
+        }
+
+        .cta-button {
+            background: #1A5C32;
+            color: #FFC107;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: #0F4020;
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #1A5C32;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.8rem;
+            color: #FF9800;
+            margin-bottom: 3rem;
+            direction: rtl;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1A5C32;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-title-urdu {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.3rem;
+            color: #FF9800;
+            margin-bottom: 1rem;
+            direction: rtl;
+        }
+
+        /* Quality Section */
+        .quality {
+            padding: 5rem 2rem;
+            background: #1A5C32;
+            color: white;
+            text-align: center;
+        }
+
+        .quality h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .quality .urdu-text {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #FFC107;
+        }
+
+        .quality-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .quality-feature {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+        .quality-feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #FFC107;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info a {
+            color: #1A5C32;
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            margin: 1rem 0;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #FF9800;
+        }
+
+        .phone {
+            font-size: 2rem;
+            color: #FF9800;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A5C32;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.2rem;
+            direction: rtl;
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #FFC107, #FF9800);
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .crown-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="crown-icon"></div>
+            <h1>بادشاہ ہلدی</h1>
+            <p class="subtitle">Badshah Haldi</p>
+            <div class="decorative-line"></div>
+            <p class="tagline">قدرت کا خالص تحفہ</p>
+            <p style="font-size: 1.3rem; color: #2C4A1F; margin-bottom: 2rem;">Nature's Pure Golden Gift</p>
+            <a href="#contact" class="cta-button">Order Now • ابھی آرڈر کریں</a>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+        <div class="container">
+            <h2 class="section-title">Premium Quality Turmeric</h2>
+            <p class="section-subtitle">اعلیٰ شاہ ہلدی</p>
+            <div class="decorative-line"></div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/haldi1.jpeg" alt="Badshah Haldi Premium Turmeric" class="product-image">
+                    <div class="product-info">
+                        <h3 style="font-family: 'Playfair Display', serif; color: #1A5C32; font-size: 1.5rem;">Original Roots</h3>
+                        <p class="urdu-text" style="color: #FF9800;">اصل جڑیں</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/haldi2.jpeg" alt="Fresh Badshah Haldi" class="product-image">
+                    <div class="product-info">
+                        <h3 style="font-family: 'Playfair Display', serif; color: #1A5C32; font-size: 1.5rem;">Fresh & Natural</h3>
+                        <p class="urdu-text" style="color: #FF9800;">تازہ اور قدرتی</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/haldi3.jpeg" alt="Pure Badshah Haldi" class="product-image">
+                    <div class="product-info">
+                        <h3 style="font-family: 'Playfair Display', serif; color: #1A5C32; font-size: 1.5rem;">100% Pure</h3>
+                        <p class="urdu-text" style="color: #FF9800;">سو فیصد خالص</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Health Benefits</h2>
+            <p class="section-subtitle">صحت کے فوائد</p>
+            <div class="decorative-line"></div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3 class="benefit-title">Natural Healing</h3>
+                    <p class="benefit-title-urdu">قدرتی شفا</p>
+                    <p>Powerful anti-inflammatory properties for natural wellness</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3 class="benefit-title">Boosts Immunity</h3>
+                    <p class="benefit-title-urdu">قوت مدافعت بڑھائے</p>
+                    <p>Strengthens your body's natural defense system</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3 class="benefit-title">Skin Health</h3>
+                    <p class="benefit-title-urdu">جلد کی صحت</p>
+                    <p>Natural glow and radiance for beautiful skin</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3 class="benefit-title">Brain Power</h3>
+                    <p class="benefit-title-urdu">دماغی طاقت</p>
+                    <p>Supports cognitive function and mental clarity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="quality">
+        <div class="container">
+            <h2>Why Choose Badshah Haldi?</h2>
+            <p class="urdu-text">بادشاہ ہلدی کیوں منتخب کریں؟</p>
+            <div class="decorative-line"></div>
+            
+            <div class="quality-features">
+                <div class="quality-feature">
+                    <h3>🌾 Farm Fresh</h3>
+                    <p class="urdu-text">تازہ فارم سے</p>
+                    <p>Directly from the finest farms to your home</p>
+                </div>
+                
+                <div class="quality-feature">
+                    <h3>🔒 No Additives</h3>
+                    <p class="urdu-text">خوشبو اور رنگ اور معیار میں کوئی ملاوٹ نہیں</p>
+                    <p>Pure turmeric with no artificial colors or preservatives</p>
+                </div>
+                
+                <div class="quality-feature">
+                    <h3>👑 Premium Grade</h3>
+                    <p class="urdu-text">پنجاب کی بہترین اشیاء</p>
+                    <p>Only the highest quality turmeric selected</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">رابطہ کریں</p>
+            <div class="decorative-line"></div>
+            
+            <div class="contact-info">
+                <p style="font-size: 1.5rem; color: #1A5C32; margin-bottom: 1.5rem;">
+                    <span class="urdu-text">اداکاری: 30 کلومیٹر، بیاپارہ روڈ، آفس</span>
+                </p>
+                <p class="phone">📞 0300-1013206</p>
+                <p style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.3rem; color: #FF9800; margin-top: 2rem;">
+                    چارگ فری کانٹیکٹ اشتیاق
+                </p>
+            </div>
+            
+            <a href="tel:03001013206" class="cta-button" style="margin-top: 2rem;">Call Now • ابھی کال کریں</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>بادشاہ ہلدی - قدرت کا خالص تحفہ</p>
+            <p style="font-family: 'Lato', sans-serif; margin-top: 1rem;">Badshah Haldi © 2026 | Nature's Pure Golden Gift</p>
+        </div>
+    </footer>
+</body>
+</html>
